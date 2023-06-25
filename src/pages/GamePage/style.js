@@ -8,7 +8,9 @@ export const Container = styled('main', {
 
     background: 'rgb(43,36,70)',
     background:'linear-gradient(149deg, rgba(43,36,70,1) 13%, rgba(70,38,119,1) 49%, rgba(60,10,122,1) 82%)',
-       
+
+    color: '#fff',
+
     '@media(max-width: 1880px)': {
         display: 'flex',
         flexDirection: "column",

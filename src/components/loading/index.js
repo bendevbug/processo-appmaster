@@ -7,7 +7,7 @@ export default function Loading(){
     return(
        <Container>
         <figure>
-            <Image src={Playstation} width={1000} height={500}></Image>
+            <Image src={Playstation} width={1000} height={500} alt="loading playstation"></Image>
         </figure>
        </Container>
     );

@@ -1,7 +1,5 @@
 import Header from "@/components/header";
 import { Container } from "./style";
-import Banner from "@/components/banner";
-import Image from "next/image";
 
 import { useEffect, useState } from "react";
 
@@ -12,7 +10,7 @@ import { useRouter } from "next/router";
 
 export default function GamePage() {
 
-    const router = useRouter;
+    const router = useRouter();
 
     const [loading, setLoading] = useState(true);
     const [games, setGames] = useState([]);
@@ -21,7 +19,7 @@ export default function GamePage() {
         
         const time = setTimeout(() => {
             setLoading(false);
-            router.push("/error");
+            router.push("/errorPage");
         }, 5000)
 
         axios.get('https://games-test-api-81e9fb0d564a.herokuapp.com/api/data', {
@@ -47,7 +45,7 @@ export default function GamePage() {
                 error.response &&
                 [500, 502, 503, 504, 507, 508, 509].includes(error.response.status)
               ) {
-                router.push("/ErrorPage2");
+                router.push("/errorPage2");
               }
         });
 
@@ -77,7 +75,7 @@ export default function GamePage() {
 
                         return(
                             <div key={game.id} className="boxShadow">
-                                <img src={game.thumbnail}></img>
+                                <img src={game.thumbnail} alt={game.title}></img>
                                 <div>
                                     <h1>{game.title}</h1>
                                     <p>{game.short_description}</p>
@@ -94,7 +92,7 @@ export default function GamePage() {
 
                         return(
                             <div key={game.id} className="boxShadow">
-                                <img src={game.thumbnail}></img>
+                                <img src={game.thumbnail} alt={game.title}></img>
                                 <div>
                                     <h1>{game.title}</h1>
                                     <p>{game.short_description}</p>
@@ -111,7 +109,7 @@ export default function GamePage() {
 
                     return(
                         <div key={game.id} className="boxShadow">
-                            <img src={game.thumbnail}></img>
+                            <img src={game.thumbnail} alt={game.title}></img>
                             <div>
                                 <h1>{game.title}</h1>
                                 <p>{game.short_description}</p>
